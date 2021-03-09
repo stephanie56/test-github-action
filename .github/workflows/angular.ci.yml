@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  TEST_SCRIPT: ${{ ng test --sourceMap=false --browsers=ChromeHeadless --watch=false }}
+  TEST_SCRIPT: ng test --sourceMap=false --browsers=ChromeHeadless --watch=false
 
 jobs:
   build:
@@ -40,4 +40,4 @@ jobs:
       run: npm run lint
 
     - name: Test
-      run: npm run env.TEST_SCRIPT
+      run: npm run ${{ env.TEST_SCRIPT }}
