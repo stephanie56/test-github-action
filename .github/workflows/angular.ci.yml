@@ -34,13 +34,13 @@ jobs:
       run: npm install
 
     - name: Lint
-      run: npm run lint
+      run: npm run lint --if-exists
 
     - name: Build App
-      run: npm run build -- --prod
+      run: npm run build -- --prod --if-exists
 
     - name: Test
-      run: npm test
+      run: npm test --if-exists
 
     - name: E2E
-      run: npm run e2e
+      run: npm run e2e --if-exists
