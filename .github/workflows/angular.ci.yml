@@ -8,13 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./angular-test-app
 
     strategy:
       matrix:
-        node: [ '10', '12' ]
+        node: [ 10.x ]
 
     steps:
     - name: Checkout Code
@@ -39,7 +36,7 @@ jobs:
     - name: Lint
       run: npm run lint
 
-    - name: Build
+    - name: Build App
       run: npm run build -- --prod
 
     - name: Test
