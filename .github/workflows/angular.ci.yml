@@ -32,4 +32,6 @@ jobs:
       run: npm run ng -- test --watch=false --progress=false --sourceMap=false --browsers=ChromeHeadless
 
     - name: E2E
-      run: npm run ng -- e2e --protractorConfig=e2e/headless.conf
+      run: |
+        npm i webdriver-manager@latest
+        npm run ng -- e2e --protractorConfig=e2e/headless.conf
