@@ -11,6 +11,9 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./angular-app
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
